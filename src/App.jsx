@@ -2,7 +2,6 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import WorkflowAnimation from './components/WorkflowAnimation'
 import Services from './components/Services'
 import HowItWorks from './components/HowItWorks'
 import Stats from './components/Stats'
@@ -17,7 +16,6 @@ function LandingPage() {
       <Navbar />
       <main>
         <Hero />
-        <WorkflowAnimation />
         <Services />
         <HowItWorks />
         <Stats />
