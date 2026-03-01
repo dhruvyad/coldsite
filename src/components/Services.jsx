@@ -64,7 +64,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div ref={gridRef} className="grid md:grid-cols-3 gap-4">
+        <div ref={gridRef} className="grid md:grid-cols-3 gap-5">
           {services.map((s, index) => (
             <div
               key={s.title}

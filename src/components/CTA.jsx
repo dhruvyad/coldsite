@@ -23,7 +23,7 @@ export default function CTA() {
         </p>
         <a
           href="https://cal.com/dhruvy/15min"
-          className="inline-block bg-emerald hover:bg-emerald-dark text-white px-8 py-4 rounded-lg font-medium text-lg transition-colors"
+          className="inline-block bg-emerald hover:bg-emerald-dark text-white px-8 py-4 rounded-lg font-medium text-lg transition-all hover:scale-[1.02]"
         >
           Book a Call →
         </a>

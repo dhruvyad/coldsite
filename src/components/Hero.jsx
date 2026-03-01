@@ -35,7 +35,7 @@ export default function Hero() {
             className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[0.9] mb-6"
             style={fadeUp(headlineInView)}
           >
-            Automate the
+            Automate
             <br />
             <span className="text-emerald">busywork.</span>
           </h1>
@@ -54,7 +54,7 @@ export default function Hero() {
           <a
             ref={ctaRef}
             href="https://cal.com/dhruvy/15min"
-            className="inline-block bg-emerald hover:bg-emerald-dark text-white px-8 py-3.5 rounded-lg font-medium text-lg transition-colors"
+            className="inline-block bg-emerald hover:bg-emerald-dark text-white px-8 py-3.5 rounded-lg font-medium text-lg transition-all hover:scale-[1.02]"
             style={fadeUp(ctaInView, 300)}
           >
             Book a Call

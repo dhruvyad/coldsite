@@ -36,7 +36,7 @@ export default function Navbar() {
           scrolled ? 'border-white/[0.1]' : 'border-white/[0.06]'
         }`}
       >
-        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* Wordmark */}
           <a href="#" className="text-xl font-bold tracking-tight text-white">
             NoClick
