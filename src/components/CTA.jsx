@@ -4,7 +4,7 @@ export default function CTA() {
   const [ref, isInView] = useInView()
 
   return (
-    <section ref={ref} className="relative overflow-hidden py-24 md:py-32">
+    <section id="contact" ref={ref} className="relative overflow-hidden py-28 md:py-36">
       {/* Radial glow background */}
       <div className="cta-glow" aria-hidden="true" />
 
@@ -15,7 +15,7 @@ export default function CTA() {
             : 'opacity-0 translate-y-8'
         }`}
       >
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
           Ready to stop doing it manually?
         </h2>
         <p className="text-zinc-400 text-lg mb-8">
@@ -25,7 +25,7 @@ export default function CTA() {
           href="mailto:hello@noclickautomation.com"
           className="inline-block bg-emerald hover:bg-emerald-dark text-white px-8 py-4 rounded-lg font-medium text-lg transition-colors"
         >
-          Book a Call
+          Book a Call →
         </a>
       </div>
     </section>

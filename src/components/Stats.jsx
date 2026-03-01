@@ -14,20 +14,21 @@ export default function Stats() {
       ref={ref}
       className="border-y border-white/[0.06] py-16 md:py-20"
     >
-      <div
-        className={`max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-0 transition-all duration-700 ease-out ${
-          isInView
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-8'
-        }`}
-      >
+      <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-0">
         {stats.map((stat, i) => (
           <div key={stat.label} className="contents">
             {i > 0 && (
               <div className="hidden md:block w-px h-12 bg-white/[0.06]" />
             )}
-            <div className="flex flex-col items-center text-center">
-              <span className="text-4xl md:text-5xl font-bold tracking-tight text-emerald">
+            <div
+              className={`flex flex-col items-center text-center transition-all duration-700 ease-out ${
+                isInView
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: `${i * 150}ms` }}
+            >
+              <span className="text-5xl md:text-6xl font-bold tracking-tight text-emerald">
                 {stat.value}
               </span>
               <span className="mt-2 text-sm text-zinc-500 uppercase tracking-wider">

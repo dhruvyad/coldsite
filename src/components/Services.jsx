@@ -44,29 +44,42 @@ const services = [
 ]
 
 export default function Services() {
-  const [ref, isInView] = useInView()
+  const [headingRef, headingInView] = useInView()
+  const [gridRef, gridInView] = useInView()
 
   return (
     <section id="services" className="py-20 md:py-28 px-6">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">What we automate</h2>
-        <p className="text-zinc-400 text-lg mb-12 max-w-lg">
-          The stuff nobody should be doing by hand.
-        </p>
-
         <div
-          ref={ref}
-          className={`grid md:grid-cols-3 gap-4 transition-all duration-700 ease-out ${
-            isInView
+          ref={headingRef}
+          className={`transition-all duration-700 ease-out ${
+            headingInView
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-8'
           }`}
         >
-          {services.map((s) => (
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">What we automate</h2>
+          <p className="text-zinc-400 text-lg mb-12 max-w-lg">
+            The stuff nobody should be doing by hand.
+          </p>
+        </div>
+
+        <div ref={gridRef} className="grid md:grid-cols-3 gap-4">
+          {services.map((s, index) => (
             <div
               key={s.title}
-              className={`bento-card bg-white/[0.02] border border-white/[0.06] rounded-xl p-7 ${s.span}`}
+              className={`relative overflow-hidden bento-card bg-white/[0.02] border border-white/[0.06] rounded-xl p-7 transition-all duration-700 ease-out ${s.span} ${
+                gridInView
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
+              {/* Accent line for 2-col-span cards */}
+              {s.span && (
+                <div className="absolute top-0 right-0 w-20 h-px bg-gradient-to-l from-emerald/20 to-transparent" />
+              )}
+
               <div className="w-10 h-10 rounded-lg bg-emerald/10 flex items-center justify-center mb-5">
                 {s.icon}
               </div>

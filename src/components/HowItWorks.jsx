@@ -19,17 +19,27 @@ const steps = [
 ]
 
 export default function HowItWorks() {
-  const [ref, isInView] = useInView()
+  const [headingRef, headingInView] = useInView()
+  const [stepsRef, stepsInView] = useInView()
 
   return (
     <section id="how-it-works" className="py-20 md:py-28 px-6">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-16 tracking-tight">How it works</h2>
+        <div
+          ref={headingRef}
+          className={`transition-all duration-700 ease-out ${
+            headingInView
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-16 tracking-tight">How it works</h2>
+        </div>
 
         <div
-          ref={ref}
+          ref={stepsRef}
           className={`transition-all duration-700 ease-out ${
-            isInView
+            stepsInView
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-8'
           }`}
@@ -37,21 +47,22 @@ export default function HowItWorks() {
           {/* Desktop layout */}
           <div className="hidden md:block">
             <div className="relative grid grid-cols-3 gap-8">
-              {/* Connecting lines between step circles */}
-              {/* Line between step 1 and step 2 */}
+              {/* Single connecting line spanning from center of step 1 circle to center of step 3 circle */}
               <div
-                className="absolute top-5 h-px bg-gradient-to-r from-emerald/20 via-emerald/10 to-emerald/20"
-                style={{ left: 'calc(33.333% * 0 + 40px)', right: 'calc(100% - 33.333% * 1)' }}
-              />
-              {/* Line between step 2 and step 3 */}
-              <div
-                className="absolute top-5 h-px bg-gradient-to-r from-emerald/20 via-emerald/10 to-emerald/20"
-                style={{ left: 'calc(33.333% + 40px)', right: 'calc(100% - 33.333% * 2)' }}
+                className="absolute h-px bg-white/[0.06]"
+                style={{ left: 'calc(16.67%)', right: 'calc(16.67%)', top: '20px' }}
               />
 
-              {steps.map((step) => (
+              {steps.map((step, index) => (
                 <div key={step.num} className="relative">
-                  <div className="w-10 h-10 rounded-full border-2 border-emerald/30 bg-emerald/5 flex items-center justify-center mb-5">
+                  <div
+                    className={`w-10 h-10 rounded-full border-2 bg-emerald/5 flex items-center justify-center mb-5 transition-colors duration-700 ${
+                      stepsInView
+                        ? 'border-emerald/30'
+                        : 'border-white/[0.06]'
+                    }`}
+                    style={{ transitionDelay: `${index * 200}ms` }}
+                  >
                     <span className="text-emerald text-sm font-medium">{step.num}</span>
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
@@ -65,12 +76,19 @@ export default function HowItWorks() {
           <div className="md:hidden">
             <div className="relative">
               {/* Vertical connecting line */}
-              <div className="absolute left-5 top-10 bottom-10 w-px bg-gradient-to-b from-emerald/20 via-emerald/10 to-emerald/20" />
+              <div className="absolute left-5 top-10 bottom-10 w-px bg-white/[0.06]" />
 
               <div className="flex flex-col gap-12">
-                {steps.map((step) => (
+                {steps.map((step, index) => (
                   <div key={step.num} className="relative flex gap-6">
-                    <div className="relative z-10 w-10 h-10 shrink-0 rounded-full border-2 border-emerald/30 bg-emerald/5 flex items-center justify-center bg-[#0A0A0A]">
+                    <div
+                      className={`relative z-10 w-10 h-10 shrink-0 rounded-full border-2 bg-emerald/5 flex items-center justify-center bg-[#0A0A0A] transition-colors duration-700 ${
+                        stepsInView
+                          ? 'border-emerald/30'
+                          : 'border-white/[0.06]'
+                      }`}
+                      style={{ transitionDelay: `${index * 200}ms` }}
+                    >
                       <span className="text-emerald text-sm font-medium">{step.num}</span>
                     </div>
                     <div className="pt-1.5">
