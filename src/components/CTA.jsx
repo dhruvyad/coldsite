@@ -22,7 +22,7 @@ export default function CTA() {
           Most automations go live within two weeks.
         </p>
         <a
-          href="mailto:hello@noclickautomation.com"
+          href="https://cal.com/dhruvy/15min"
           className="inline-block bg-emerald hover:bg-emerald-dark text-white px-8 py-4 rounded-lg font-medium text-lg transition-colors"
         >
           Book a Call →

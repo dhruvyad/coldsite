@@ -45,18 +45,12 @@ export default function HowItWorks() {
           }`}
         >
           {/* Desktop layout */}
-          <div className="hidden md:block">
-            <div className="relative grid grid-cols-3 gap-8">
-              {/* Single connecting line spanning from center of step 1 circle to center of step 3 circle */}
-              <div
-                className="absolute h-px bg-white/[0.06]"
-                style={{ left: 'calc(16.67%)', right: 'calc(16.67%)', top: '20px' }}
-              />
-
-              {steps.map((step, index) => (
-                <div key={step.num} className="relative">
+          <div className="hidden md:grid grid-cols-3 gap-8">
+            {steps.map((step, index) => (
+              <div key={step.num}>
+                <div className="relative flex items-center mb-5">
                   <div
-                    className={`w-10 h-10 rounded-full border-2 bg-emerald/5 flex items-center justify-center mb-5 transition-colors duration-700 ${
+                    className={`relative z-10 w-10 h-10 shrink-0 rounded-full border-2 bg-emerald/5 flex items-center justify-center transition-colors duration-700 ${
                       stepsInView
                         ? 'border-emerald/30'
                         : 'border-white/[0.06]'
@@ -65,11 +59,14 @@ export default function HowItWorks() {
                   >
                     <span className="text-emerald text-sm font-medium">{step.num}</span>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                  <p className="text-zinc-400 leading-relaxed">{step.desc}</p>
+                  {index < steps.length - 1 && (
+                    <div className="h-px bg-white/[0.06] flex-1 ml-3 -mr-4" />
+                  )}
                 </div>
-              ))}
-            </div>
+                <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+                <p className="text-zinc-400 leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
           </div>
 
           {/* Mobile layout */}

@@ -4,7 +4,7 @@ export default function Footer() {
   const links = [
     { label: 'Privacy', href: '/privacy' },
     { label: 'Terms', href: '/terms' },
-    { label: 'Contact', href: 'mailto:hello@noclickautomation.com' },
+    { label: 'Contact', href: 'https://cal.com/dhruvy/15min' },
   ]
 
   return (

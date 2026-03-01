@@ -54,7 +54,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#contact"
+              href="https://cal.com/dhruvy/15min"
               className="bg-emerald hover:bg-emerald-dark text-white px-5 py-2 rounded-lg font-medium transition-colors"
             >
               Book a Call
@@ -135,7 +135,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#contact"
+              href="https://cal.com/dhruvy/15min"
               className="bg-emerald hover:bg-emerald-dark text-white px-8 py-3.5 rounded-lg font-medium text-lg transition-colors mt-4"
               onClick={() => setMobileOpen(false)}
             >

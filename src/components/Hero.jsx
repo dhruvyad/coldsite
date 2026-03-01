@@ -64,7 +64,7 @@ export default function Hero() {
         {/* CTA */}
         <a
           ref={ctaRef}
-          href="#contact"
+          href="https://cal.com/dhruvy/15min"
           className="inline-block bg-emerald hover:bg-emerald-dark text-white px-8 py-3.5 rounded-lg font-medium text-lg transition-colors"
           style={fadeUp(ctaInView, 300)}
         >
