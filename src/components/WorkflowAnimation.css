@@ -1,0 +1,110 @@
+/* Workflow Animation — traveling dot keyframes */
+
+/* Horizontal dot travel (desktop) */
+@keyframes travel-dot-x {
+  0%, 100% {
+    left: -4px;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  40% {
+    left: calc(100% - 4px);
+    opacity: 1;
+  }
+  45%, 100% {
+    left: calc(100% - 4px);
+    opacity: 0;
+  }
+}
+
+/* Vertical dot travel (mobile) */
+@keyframes travel-dot-y {
+  0%, 100% {
+    top: -4px;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  40% {
+    top: calc(100% - 4px);
+    opacity: 1;
+  }
+  45%, 100% {
+    top: calc(100% - 4px);
+    opacity: 0;
+  }
+}
+
+/* Node glow pulse — brief emerald border + shadow */
+@keyframes node-glow {
+  0%, 100% {
+    border-color: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 0 rgba(16, 185, 129, 0);
+  }
+  20%, 30% {
+    border-color: rgba(16, 185, 129, 0.4);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* Traveling dot — horizontal */
+.workflow-dot-x {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: #10b981;
+  opacity: 0;
+  animation: travel-dot-x 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Traveling dot — vertical */
+.workflow-dot-y {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: #10b981;
+  opacity: 0;
+  animation: travel-dot-y 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Node glow animation */
+.workflow-node-glow {
+  animation: node-glow 6s ease-in-out infinite;
+}
+
+/* Dot subtle glow */
+.workflow-dot-x,
+.workflow-dot-y {
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.4);
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .workflow-dot-x,
+  .workflow-dot-y {
+    animation: none;
+    opacity: 0;
+    display: none;
+  }
+
+  .workflow-node-glow {
+    animation: none;
+  }
+}

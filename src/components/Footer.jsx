@@ -1,11 +1,7 @@
+import { Link } from 'react-router-dom'
+
 export default function Footer() {
   const year = new Date().getFullYear()
-
-  const links = [
-    { label: 'Privacy', href: '/privacy' },
-    { label: 'Terms', href: '/terms' },
-    { label: 'Contact', href: 'https://cal.com/dhruvy/15min' },
-  ]
 
   return (
     <footer className="border-t border-white/[0.06] py-8 px-6">
@@ -15,15 +11,24 @@ export default function Footer() {
         </span>
 
         <nav className="flex items-center gap-6">
-          {links.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-zinc-500 hover:text-zinc-300 transition-colors text-sm"
-            >
-              {link.label}
-            </a>
-          ))}
+          <Link
+            to="/privacy"
+            className="text-zinc-500 hover:text-zinc-300 transition-colors text-sm"
+          >
+            Privacy
+          </Link>
+          <Link
+            to="/terms"
+            className="text-zinc-500 hover:text-zinc-300 transition-colors text-sm"
+          >
+            Terms
+          </Link>
+          <a
+            href="https://cal.com/dhruvy/15min"
+            className="text-zinc-500 hover:text-zinc-300 transition-colors text-sm"
+          >
+            Contact
+          </a>
         </nav>
       </div>
     </footer>
