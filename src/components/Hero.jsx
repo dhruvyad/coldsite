@@ -17,9 +17,9 @@ export default function Hero() {
       {/* Emerald radial glow — left side */}
       <div className="hero-glow" />
 
-      <div className="max-w-6xl mx-auto relative z-10 flex flex-col lg:flex-row lg:items-center lg:gap-16">
+      <div className="max-w-7xl mx-auto relative z-10 flex flex-col lg:flex-row lg:items-center lg:gap-12">
         {/* Left — copy */}
-        <div className="lg:flex-1 lg:max-w-[520px]">
+        <div className="lg:w-[440px] lg:shrink-0">
           {/* Badge */}
           <div
             className="inline-flex items-center gap-2 text-xs font-medium text-zinc-500 uppercase tracking-widest mb-6"
