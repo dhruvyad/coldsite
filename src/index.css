@@ -42,36 +42,37 @@ body::before {
   z-index: 0;
 }
 
-/* Staggered fade-in animation */
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
+/* CTA radial glow */
+.cta-glow {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Gentle bounce for scroll indicator */
+@keyframes bounce-gentle {
+  0%, 100% {
     transform: translateY(0);
   }
+  50% {
+    transform: translateY(6px);
+  }
 }
 
-.animate-fade-up {
-  animation: fade-up 0.6s ease-out forwards;
-  opacity: 0;
-}
-
-.animation-delay-150 {
-  animation-delay: 150ms;
-}
-
-.animation-delay-300 {
-  animation-delay: 300ms;
+.animate-bounce-gentle {
+  animation: bounce-gentle 2s ease-in-out infinite;
 }
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .animate-fade-up {
+  .animate-bounce-gentle {
     animation: none;
-    opacity: 1;
   }
 }
 
