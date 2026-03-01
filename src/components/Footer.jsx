@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-white/[0.06] py-8 px-6">
-      <div className="max-w-5xl mx-auto flex items-center justify-between">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <span className="text-zinc-500 text-sm">
           &copy; {year} NoClick Automation
         </span>

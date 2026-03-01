@@ -36,7 +36,7 @@ export default function Navbar() {
           scrolled ? 'border-white/[0.1]' : 'border-white/[0.06]'
         }`}
       >
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* Wordmark */}
           <a href="#" className="text-xl font-bold tracking-tight text-white">
             NoClick
@@ -85,8 +85,13 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile overlay menu */}
-      {mobileOpen && (
-        <div className="fixed inset-0 z-[100] bg-[#0A0A0A]/95 backdrop-blur-lg flex flex-col">
+      <div
+        className={`fixed inset-0 z-[100] bg-[#0A0A0A]/95 backdrop-blur-lg flex flex-col transition-all duration-300 ${
+          mobileOpen
+            ? 'opacity-100 pointer-events-auto'
+            : 'opacity-0 pointer-events-none'
+        }`}
+      >
           {/* Header row with close button */}
           <div className="flex items-center justify-between px-6 py-4">
             <a
@@ -137,8 +142,7 @@ export default function Navbar() {
               Book a Call
             </a>
           </div>
-        </div>
-      )}
+      </div>
     </>
   )
 }
